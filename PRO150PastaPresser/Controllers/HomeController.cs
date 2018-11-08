@@ -13,6 +13,11 @@ namespace PRO150PastaPresser.Controllers
             return View();
         }
 
+        public ActionResult Click()
+        {
+            return View("Index");
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
