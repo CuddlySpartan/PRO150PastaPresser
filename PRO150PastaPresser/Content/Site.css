@@ -23,6 +23,27 @@ textarea {
     max-width: 280px;
 }
 
+
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+}
+
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 33%;
+    margin: 10px;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+}
+
+.lasagnaImg
+{
+    width:80%;
+}
+
 .pastaPresserMain 
 {
     float:left;
