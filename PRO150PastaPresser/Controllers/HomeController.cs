@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PRO150PastaPresser.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,14 +9,17 @@ namespace PRO150PastaPresser.Controllers
 {
     public class HomeController : Controller
     {
+        int thing = 1;
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Click()
+        public ActionResult Click(Italian italian)
         {
-            return View("Index");
+            thing++;
+            italian.Lira = thing;
+            return View(italian);
         }
 
         public ActionResult About()
