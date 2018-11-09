@@ -9,7 +9,7 @@ namespace PRO150PastaPresser.Controllers
 {
     public class HomeController : Controller
     {
-        int thing = 1;
+        Italian BigItalian = new Italian();
         public ActionResult Index()
         {
             return View();
@@ -17,9 +17,11 @@ namespace PRO150PastaPresser.Controllers
 
         public ActionResult Click(Italian italian)
         {
-            thing++;
-            italian.Lira = thing;
-            return View(italian);
+            if (italian != null) {
+                BigItalian = italian;
+            }
+            BigItalian.Lira++;
+            return View(BigItalian);
         }
 
         public ActionResult About()
