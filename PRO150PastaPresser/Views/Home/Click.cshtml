@@ -6,14 +6,12 @@
 <div class="homePageMainBody">
     <div class="pastaPresserMain">
         <h2>
-            Lira: <label id="LiraCounter"></label>
+            Lira: <label id="LiraCounter">@Model.Lira</label>
         </h2>
-        <a onclick="AddLira()">
-            <img src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" width="250" class="pastaImg" />
-        </a>
+            <img src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" width="250" class="pastaImg" onclick="@Model.Lira = AddLira(@Model)"/>
         <div class="pastaPresserUpgrades">
             This is where upgrade do
         </div>
     </div>
 </div>
-<script href="~/Scripts/Lasagna/ConvertMVCModeltoJSModel.js"></script>
+<script href="~/Scripts/Lasagna/LiraControl.js"></script>

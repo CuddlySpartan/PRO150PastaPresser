@@ -10,18 +10,16 @@ namespace PRO150PastaPresser.Controllers
     public class HomeController : Controller
     {
         Italian BigItalian = new Italian();
-        public ActionResult Index()
+        public ActionResult Index(Italian italian)
         {
-            return View();
+            italian = new Italian();
+            return View(italian);
         }
 
         public ActionResult Click(Italian italian)
         {
-            if (italian != null) {
-                BigItalian = italian;
-            }
-            BigItalian.Lira++;
-            return View(BigItalian);
+            italian = new Italian();
+            return View(italian);
         }
 
         public ActionResult About()
