@@ -9,18 +9,25 @@
 
 <div class="flex-container">
     <div>
-        Upgrades:
+        <span class="title">Upgrades:</span>
     </div>
     <div>
-        <input type="hidden" name="p" value="@Model.Password" />
-        <input type="hidden" name="u" value="@Model.Username" />
+        @*<input type="hidden" name="p" value="@Model.Password" />
+        <input type="hidden" name="u" value="@Model.Username" />*@
         <div id="LiraCount">
             Lira: <p id="number">@Model.Lira</p>
         </div>
         <img  id="trash" src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" class="lasagnaImg" />
     </div>
-    <div>
-        Player Info:
+    <div class="playerInfo">
+        <span class="title">Player Info:</span>
+        <ul class="nobullet">
+            <li id="cheeseCount">Cheese Count: @Model.CheeseCount</li>
+            <li id="sauceCount">Sauce Count: @Model.SauceCount</li>
+            <li id="pastaCount">Pasta Count: @Model.PastaCount</li>
+            <li id="meatCount">Meat Count: @Model.MeatCount</li>
+            <li id="clickCount">Click Upgrade Level: @Model.ClickUpgrade</li>
+        </ul>
     </div>
 </div>
 <script src="~/Scripts/Lasanga/LiraControl.js"></script>

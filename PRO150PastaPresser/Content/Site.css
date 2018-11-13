@@ -64,3 +64,16 @@ hr
 {
     clear:both;
 }
+
+.nobullet {
+    list-style-type:none;
+}
+
+.playerInfo > ul{
+    font-size:16px;
+    text-align:left;
+}
+
+.title {
+
+}
