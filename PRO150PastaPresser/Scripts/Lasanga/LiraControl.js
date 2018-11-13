@@ -8,43 +8,44 @@ window.addEventListener('load', function () {
         number.innerText = numberLiteral;
     }
 });
-//cheese button
+//lps/upgrade managment
 window.addEventListener('load', function () {
-    let upgrade = document.getElementById('upgradeCheese');
+    let cupgrade = document.getElementById('upgradeCheese');
     let number = document.getElementById('lpsNum');
+    let ccount = document.getElementById('cheeseCount');
     let numberLiteral = parseInt(number.innerHTML);
-    upgrade.onclick = () => {
-        numberLiteral+=2;
+    let ccountLiteral = parseInt(ccount.innerHTML);
+    cupgrade.onclick = () => {
+        numberLiteral += 2;
+        ccountLiteral++;
+        ccount.innerText = ccountLiteral;
         number.innerText = numberLiteral;
     }
-});
-//sauce button
-window.addEventListener('load', function () {
-    let upgrade = document.getElementById('upgradeSauce');
-    let number = document.getElementById('lpsNum');
-    let numberLiteral = parseInt(number.innerHTML);
-    upgrade.onclick = () => {
+    let supgrade = document.getElementById('upgradeSauce');
+    let scount = document.getElementById('sauceCount');
+    let scountLiteral = parseInt(scount.innerHTML);
+    supgrade.onclick = () => {
         numberLiteral += 3;
+        scountLiteral++;
+        scount.innerText = scountLiteral;
         number.innerText = numberLiteral;
     }
-});
-//pasta button
-window.addEventListener('load', function () {
-    let upgrade = document.getElementById('upgradePasta');
-    let number = document.getElementById('lpsNum');
-    let numberLiteral = parseInt(number.innerHTML);
-    upgrade.onclick = () => {
+    let pupgrade = document.getElementById('upgradePasta');
+    let pcount = document.getElementById('pastaCount');
+    let pcountLiteral = parseInt(pcount.innerHTML);
+    pupgrade.onclick = () => {
         numberLiteral += 5;
+        pcountLiteral++;
+        pcount.innerText = pcountLiteral;
         number.innerText = numberLiteral;
     }
-});
-//meat button
-window.addEventListener('load', function () {
-    let upgrade = document.getElementById('upgradeMeat');
-    let number = document.getElementById('lpsNum');
-    let numberLiteral = parseInt(number.innerHTML);
-    upgrade.onclick = () => {
+    let mupgrade = document.getElementById('upgradeMeat');
+    let mcount = document.getElementById('meatCount');
+    let mcountLiteral = parseInt(mcount.innerHTML);
+    mupgrade.onclick = () => {
         numberLiteral += 10;
+        mcountLiteral++;
+        mcount.innerText = mcountLiteral;
         number.innerText = numberLiteral;
     }
 });

@@ -78,7 +78,7 @@ hr
 
 }
 
-.liraCount, lpsCount{
+.liraCount, .lpsCount{
     background: yellow;
     color: dodgerblue;
     width: auto;
