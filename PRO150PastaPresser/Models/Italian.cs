@@ -7,6 +7,7 @@ namespace PRO150PastaPresser.Models
 {
     public class Italian
     {
+        int lps = 0;
         public string Username { get; set; }
         public string Password { get; set; }
         public int Lira { get; set; }
@@ -16,5 +17,15 @@ namespace PRO150PastaPresser.Models
         public int PastaCount { get; set; }
         public int ClickUpgrade { get; set; }
         public DateTime LastLogin { get; set; }
+        public int LPS {
+            get
+            {
+                return lps;
+            }
+            set
+            {
+                lps = ItalianHelper.GetLPS(this);
+            }
+        }
     }
 }

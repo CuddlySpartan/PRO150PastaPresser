@@ -27,9 +27,12 @@
         @*<input type="hidden" name="p" value="@Model.Password" />
         <input type="hidden" name="u" value="@Model.Username" />*@
         <div id="LiraCount">
-            Lira: <p id="number">@Model.Lira</p>
+            Lira: <span id="number" class="liraCount">@Model.Lira</span>
         </div>
         <img  id="trash" src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" class="lasagnaImg" />
+        <div id="lpsCount">
+            LPS: <span id="lpsNum" class="lpsCount">@Model.LPS</span>
+        </div>
     </div>
     <div class="playerInfo">
         <span class="title">Player Info:</span>

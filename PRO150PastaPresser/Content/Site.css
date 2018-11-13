@@ -78,6 +78,12 @@ hr
 
 }
 
+.liraCount, lpsCount{
+    background: yellow;
+    color: dodgerblue;
+    width: auto;
+}
+
 .upBtn {
     font-size: 16px;
     max-height: 50px;
