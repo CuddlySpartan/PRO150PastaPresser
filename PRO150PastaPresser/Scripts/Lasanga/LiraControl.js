@@ -22,6 +22,7 @@ window.addEventListener('load', function () {
         number.innerText = numberLiteral;
     }
     let supgrade = document.getElementById('upgradeSauce');
+
     let scount = document.getElementById('sauceCount');
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
