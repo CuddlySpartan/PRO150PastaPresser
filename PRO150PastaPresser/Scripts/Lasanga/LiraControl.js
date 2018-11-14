@@ -49,3 +49,15 @@ window.addEventListener('load', function () {
         number.innerText = numberLiteral;
     }
 });
+
+window.addEventListener('load', addLiraPerSecond());
+setInterval(function () { addLiraPerSecond();}, 1000);
+
+function addLiraPerSecond() {
+    let currentLira = document.getElementById('number');
+    let LPS = document.getElementById('lpsNum');
+    let newLira = parseInt(currentLira.innerHTML) + parseInt(LPS.innerHTML);
+    currentLira.innerHTML = newLira;
+    console.log(currentLira);
+    
+}
