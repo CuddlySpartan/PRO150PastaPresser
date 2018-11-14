@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PastaPresserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="UserData">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Lira" Type="int" Nullable="false" />
+          <Property Name="CheeseCount" Type="int" Nullable="false" />
+          <Property Name="SauceCount" Type="int" Nullable="false" />
+          <Property Name="MeatCount" Type="int" Nullable="false" />
+          <Property Name="PastCount" Type="int" Nullable="false" />
+          <Property Name="ClickUpgrade" Type="int" Nullable="false" />
+          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="LPS" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PastaPresserModelStoreContainer">
+          <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PastaPresserModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="UserData">
+          <Key>
+            <PropertyRef Name="PlayerId" />
+          </Key>
+          <Property Name="PlayerId" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Lira" Type="Int32" Nullable="false" />
+          <Property Name="CheeseCount" Type="Int32" Nullable="false" />
+          <Property Name="SauceCount" Type="Int32" Nullable="false" />
+          <Property Name="MeatCount" Type="Int32" Nullable="false" />
+          <Property Name="PastCount" Type="Int32" Nullable="false" />
+          <Property Name="ClickUpgrade" Type="Int32" Nullable="false" />
+          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="LPS" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="PastaPresserEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserDatas" EntityType="Self.UserData" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PastaPresserModelStoreContainer" CdmEntityContainer="PastaPresserEntities">
+          <EntitySetMapping Name="UserDatas">
+            <EntityTypeMapping TypeName="PastaPresserModel.UserData">
+              <MappingFragment StoreEntitySet="UserData">
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Lira" ColumnName="Lira" />
+                <ScalarProperty Name="CheeseCount" ColumnName="CheeseCount" />
+                <ScalarProperty Name="SauceCount" ColumnName="SauceCount" />
+                <ScalarProperty Name="MeatCount" ColumnName="MeatCount" />
+                <ScalarProperty Name="PastCount" ColumnName="PastCount" />
+                <ScalarProperty Name="ClickUpgrade" ColumnName="ClickUpgrade" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="LPS" ColumnName="LPS" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
