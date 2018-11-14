@@ -1,6 +1,8 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("../Resources/pastra.png");
+    background-repeat: repeat;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -23,6 +25,9 @@ textarea {
     max-width: 280px;
 }
 
+.body-content {
+    background-color: dodgerblue;
+}
 
 .flex-container {
     display: flex;
