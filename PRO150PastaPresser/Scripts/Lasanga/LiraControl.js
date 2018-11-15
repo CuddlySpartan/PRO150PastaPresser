@@ -1,13 +1,28 @@
-﻿//lasagna click
+﻿let currentLira = document.getElementById('number');
+let literalLira = currentLira.innerHTML;
+
+
+//lasagna click
 window.addEventListener('load', function () {
     let trash = document.getElementById('trash');
-    let number = document.getElementById('number');
-    let numberLiteral = parseInt(number.innerHTML);
     trash.onclick = () => {
-        numberLiteral++;
-        number.innerText = numberLiteral;
+        literalLira++;
+        currentLira.innerHTML = literalLira;
     }
 });
+
+
+//Lira Per Second
+window.addEventListener('load', addLiraPerSecond());
+setInterval(function () { addLiraPerSecond(); }, 1000);
+
+function addLiraPerSecond() {
+    let LPS = document.getElementById('lpsNum');
+    literalLira = parseInt(currentLira.innerHTML) + parseInt(LPS.innerHTML);
+    currentLira.innerHTML = literalLira;
+}
+
+
 //lps/upgrade managment
 window.addEventListener('load', function () {
     let cupgrade = document.getElementById('upgradeCheese');
@@ -22,6 +37,7 @@ window.addEventListener('load', function () {
         number.innerText = numberLiteral;
     }
     let supgrade = document.getElementById('upgradeSauce');
+
     let scount = document.getElementById('sauceCount');
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
@@ -50,14 +66,4 @@ window.addEventListener('load', function () {
     }
 });
 
-window.addEventListener('load', addLiraPerSecond());
-setInterval(function () { addLiraPerSecond();}, 1000);
 
-function addLiraPerSecond() {
-    let currentLira = document.getElementById('number');
-    let LPS = document.getElementById('lpsNum');
-    let newLira = parseInt(currentLira.innerHTML) + parseInt(LPS.innerHTML);
-    currentLira.innerHTML = newLira;
-    console.log(currentLira);
-    
-}
