@@ -199,24 +199,6 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="EF\UserData.cs">
-      <DependentUpon>UserEFData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\UserEFData.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserEFData.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\UserEFData.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserEFData.tt</DependentUpon>
-    </Compile>
-    <Compile Include="EF\UserEFData.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>UserEFData.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,16 +215,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="EF\UserEFData.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserEFData.edmx</DependentUpon>
-      <LastGenOutput>UserEFData.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="EF\UserEFData.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>UserEFData.edmx</DependentUpon>
-      <LastGenOutput>UserEFData.cs</LastGenOutput>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -252,13 +224,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <EntityDeploy Include="EF\UserEFData.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>UserEFData.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="EF\UserEFData.edmx.diagram">
-      <DependentUpon>UserEFData.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

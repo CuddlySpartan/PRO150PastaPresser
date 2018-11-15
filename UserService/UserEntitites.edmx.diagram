@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8490cc3d0e4b4ac4890a524dab480ceb" Name="Diagram1">
+      <Diagram DiagramId="55d70763885543909b2ac5083a500ddf" Name="Diagram1">
         <EntityTypeShape EntityType="PastaPresserModel.UserData" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>

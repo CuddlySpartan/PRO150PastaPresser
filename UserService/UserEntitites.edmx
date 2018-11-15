@@ -16,7 +16,7 @@
           <Property Name="CheeseCount" Type="int" Nullable="false" />
           <Property Name="SauceCount" Type="int" Nullable="false" />
           <Property Name="MeatCount" Type="int" Nullable="false" />
-          <Property Name="PastCount" Type="int" Nullable="false" />
+          <Property Name="PastaCount" Type="int" Nullable="false" />
           <Property Name="ClickUpgrade" Type="int" Nullable="false" />
           <Property Name="LastLogin" Type="datetime" />
           <Property Name="LPS" Type="int" Nullable="false" />
@@ -40,7 +40,7 @@
           <Property Name="CheeseCount" Type="Int32" Nullable="false" />
           <Property Name="SauceCount" Type="Int32" Nullable="false" />
           <Property Name="MeatCount" Type="Int32" Nullable="false" />
-          <Property Name="PastCount" Type="Int32" Nullable="false" />
+          <Property Name="PastaCount" Type="Int32" Nullable="false" />
           <Property Name="ClickUpgrade" Type="Int32" Nullable="false" />
           <Property Name="LastLogin" Type="DateTime" Precision="3" />
           <Property Name="LPS" Type="Int32" Nullable="false" />
@@ -64,7 +64,7 @@
                 <ScalarProperty Name="CheeseCount" ColumnName="CheeseCount" />
                 <ScalarProperty Name="SauceCount" ColumnName="SauceCount" />
                 <ScalarProperty Name="MeatCount" ColumnName="MeatCount" />
-                <ScalarProperty Name="PastCount" ColumnName="PastCount" />
+                <ScalarProperty Name="PastaCount" ColumnName="PastaCount" />
                 <ScalarProperty Name="ClickUpgrade" ColumnName="ClickUpgrade" />
                 <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
                 <ScalarProperty Name="LPS" ColumnName="LPS" />
