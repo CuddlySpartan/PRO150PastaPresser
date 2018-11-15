@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PRO150PastaPresser.EF
+namespace UserService
 {
     using System;
     using System.Collections.Generic;
@@ -21,7 +21,7 @@ namespace PRO150PastaPresser.EF
         public int CheeseCount { get; set; }
         public int SauceCount { get; set; }
         public int MeatCount { get; set; }
-        public int PastCount { get; set; }
+        public int PastaCount { get; set; }
         public int ClickUpgrade { get; set; }
         public Nullable<System.DateTime> LastLogin { get; set; }
         public int LPS { get; set; }

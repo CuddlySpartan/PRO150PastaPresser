@@ -38,6 +38,7 @@ window.addEventListener('load', function () {
 
     }
     let supgrade = document.getElementById('upgradeSauce');
+
     let scount = document.getElementById('sauceCount');
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {

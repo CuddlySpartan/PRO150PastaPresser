@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PRO150PastaPresser.EF
+namespace UserService
 {
     using System;
     using System.Data.Entity;
