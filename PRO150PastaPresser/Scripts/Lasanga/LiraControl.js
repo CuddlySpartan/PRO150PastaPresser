@@ -29,10 +29,10 @@ window.addEventListener('load', function () {
     let number = document.getElementById('lpsNum');
     let ccount = document.getElementById('cheeseCount');
     let ccost = document.getElementById('UpgradeCheesePrice');
-    let ccostLiteral = parseInt(ccost.innerHTML);
     let numberLiteral = parseInt(number.innerHTML);
     let ccountLiteral = parseInt(ccount.innerHTML);
     cupgrade.onclick = () => {
+        let ccostLiteral = parseInt(ccost.innerHTML);
         numberLiteral += 2;
         ccountLiteral++;
         ccount.innerText = ccountLiteral;
@@ -43,9 +43,9 @@ window.addEventListener('load', function () {
     let supgrade = document.getElementById('upgradeSauce');
     let scount = document.getElementById('sauceCount');
     let scost = document.getElementById('UpgradeSaucePrice');
-    let scostLiteral = parseInt(scost.innerHTML);
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
+        let scostLiteral = parseInt(scost.innerHTML);
         numberLiteral += 3;
         scountLiteral++;
         scount.innerText = scountLiteral;
@@ -56,9 +56,9 @@ window.addEventListener('load', function () {
     let pupgrade = document.getElementById('upgradePasta');
     let pcount = document.getElementById('pastaCount');
     let pcost = document.getElementById('UpgradePastaPrice');
-    let pcostLiteral = parseInt(pcost.innerHTML);
     let pcountLiteral = parseInt(pcount.innerHTML);
     pupgrade.onclick = () => {
+        let pcostLiteral = parseInt(pcost.innerHTML);
         numberLiteral += 5;
         pcountLiteral++;
         pcount.innerText = pcountLiteral;
@@ -68,10 +68,10 @@ window.addEventListener('load', function () {
     }
     let mupgrade = document.getElementById('upgradeMeat');
     let mcount = document.getElementById('meatCount');
-    let mcost = document.getElementById('UpgradeMeatPrice');
-    let mcostLiteral = parseInt(mcost.innerHTML);
     let mcountLiteral = parseInt(mcount.innerHTML);
+    let mcost = document.getElementById('UpgradeMeatPrice');
     mupgrade.onclick = () => {
+        let mcostLiteral = parseInt(mcost.innerHTML);
         numberLiteral += 10;
         mcountLiteral++;
         mcount.innerHTML = mcountLiteral;
