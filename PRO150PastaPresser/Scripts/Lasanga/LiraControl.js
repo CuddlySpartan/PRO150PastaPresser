@@ -28,6 +28,8 @@ window.addEventListener('load', function () {
     let cupgrade = document.getElementById('upgradeCheese');
     let number = document.getElementById('lpsNum');
     let ccount = document.getElementById('cheeseCount');
+    let ccost = document.getElementById('UpgradeCheesePrice');
+    let ccostLiteral = parseInt(ccost.innerHTML);
     let numberLiteral = parseInt(number.innerHTML);
     let ccountLiteral = parseInt(ccount.innerHTML);
     cupgrade.onclick = () => {
@@ -35,44 +37,61 @@ window.addEventListener('load', function () {
         ccountLiteral++;
         ccount.innerText = ccountLiteral;
         number.innerText = numberLiteral;
-
+        purchaseUpgrade(ccostLiteral);
+        incrementCost(ccost);
     }
     let supgrade = document.getElementById('upgradeSauce');
-
     let scount = document.getElementById('sauceCount');
+    let scost = document.getElementById('UpgradeSaucePrice');
+    let scostLiteral = parseInt(scost.innerHTML);
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
         numberLiteral += 3;
         scountLiteral++;
         scount.innerText = scountLiteral;
         number.innerText = numberLiteral;
+        purchaseUpgrade(scostLiteral);
+        incrementCost(scost);
     }
     let pupgrade = document.getElementById('upgradePasta');
     let pcount = document.getElementById('pastaCount');
+    let pcost = document.getElementById('UpgradePastaPrice');
+    let pcostLiteral = parseInt(pcost.innerHTML);
     let pcountLiteral = parseInt(pcount.innerHTML);
     pupgrade.onclick = () => {
         numberLiteral += 5;
         pcountLiteral++;
         pcount.innerText = pcountLiteral;
         number.innerText = numberLiteral;
+        purchaseUpgrade(pcostLiteral);
+        incrementCost(pcost);
     }
     let mupgrade = document.getElementById('upgradeMeat');
     let mcount = document.getElementById('meatCount');
     let mcost = document.getElementById('UpgradeMeatPrice');
-    let mcountLiteral = parseInt(mcount.innerHTML);
     let mcostLiteral = parseInt(mcost.innerHTML);
+    let mcountLiteral = parseInt(mcount.innerHTML);
     mupgrade.onclick = () => {
         numberLiteral += 10;
         mcountLiteral++;
-        mcount.innerText = mcountLiteral;
-        number.innerText = numberLiteral;
-        mcost.innerText = PurchaseUpgrade(0.3, mcostLiteral);
+        mcount.innerHTML = mcountLiteral;
+        number.innerHTML = numberLiteral;
+        purchaseUpgrade(mcostLiteral);
+        incrementCost(mcost);
     }
 });
 
-window.addEventListener('load', function () {
 
-});
+function purchaseUpgrade(cost) {
+    currentLira.innerHTML = parseInt(literalLira - cost);
+}
+
+
+function incrementCost(currentCost) {
+    let currentCostLiteral = parseInt(currentCost.innerHTML);
+    let rate = 1.2;
+    currentCost.innerHTML = parseInt(currentCostLiteral *= rate);
+}
 
 //This is for rendering everything on startup
 //function CalculateCost(upgradeCount, rate, baseCost) {
@@ -85,11 +104,3 @@ window.addEventListener('load', function () {
 //    }
 //    return baseCost;
 //}
-
-function PurchaseUpgrade(rate, currentCost) {
-    let costLiteral = parseInt(currentCost);
-    let rateLiteral = parseFloat(rate.innerHTML);
-    literalLira -= costLiteral;
-    costLiteral *= rateLiteral;
-    return costLiteral;
-}
