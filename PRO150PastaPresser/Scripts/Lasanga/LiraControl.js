@@ -89,7 +89,11 @@ window.addEventListener('load', function () {
 function PurchaseUpgrade(rate, currentCost) {
     let costLiteral = parseInt(currentCost);
     let rateLiteral = parseFloat(rate.innerHTML);
-    literalLira -= costLiteral;
-    costLiteral *= rateLiteral;
+    let literalLiraNumber = parseInt(literalLira);
+    if (literalLiraNumber - costLiteral >= 0) {
+        literalLiraNumber -= costLiteral;
+        costLiteral *= rateLiteral;
+        literalLira = literalLiraNumber.toString();
+    }
     return costLiteral;
 }
