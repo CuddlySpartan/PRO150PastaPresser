@@ -71,19 +71,21 @@ window.addEventListener('load', function () {
     let mcountLiteral = parseInt(mcount.innerHTML);
     let mcost = document.getElementById('UpgradeMeatPrice');
     mupgrade.onclick = () => {
-        let mcostLiteral = parseInt(mcost.innerHTML);
-        numberLiteral += 10;
-        mcountLiteral++;
-        mcount.innerHTML = mcountLiteral;
-        number.innerHTML = numberLiteral;
-        purchaseUpgrade(mcostLiteral);
-        incrementCost(mcost);
+            let mcostLiteral = parseInt(mcost.innerHTML);
+            numberLiteral += 10;
+            mcountLiteral++;
+            mcount.innerHTML = mcountLiteral;
+            number.innerHTML = numberLiteral;
+            purchaseUpgrade(mcostLiteral);
+            incrementCost(mcost);
     }
 });
 
 
 function purchaseUpgrade(cost) {
-    currentLira.innerHTML = parseInt(literalLira - cost);
+    if ((literalLira - cost) > 0) {
+        currentLira.innerHTML = parseInt(literalLira - cost);
+    }
 }
 
 
