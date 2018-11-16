@@ -33,7 +33,7 @@ window.addEventListener('load', function () {
     let ccountLiteral = parseInt(ccount.innerHTML);
     cupgrade.onclick = () => {
         let ccostLiteral = parseInt(ccost.innerHTML);
-        if ((literalLira - ccostLiteral) > 0) {
+        if ((literalLira - ccostLiteral) >= 0) {
             numberLiteral += 2;
             ccountLiteral++;
             ccount.innerText = ccountLiteral;
@@ -48,7 +48,7 @@ window.addEventListener('load', function () {
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
         let scostLiteral = parseInt(scost.innerHTML);
-        if ((literalLira - scostLiteral) > 0) {
+        if ((literalLira - scostLiteral) >= 0) {
             numberLiteral += 3;
             scountLiteral++;
             scount.innerText = scountLiteral;
@@ -63,7 +63,7 @@ window.addEventListener('load', function () {
     let pcountLiteral = parseInt(pcount.innerHTML);
     pupgrade.onclick = () => {
         let pcostLiteral = parseInt(pcost.innerHTML);
-        if ((literalLira - pcostLiteral) > 0) {
+        if ((literalLira - pcostLiteral) >= 0) {
             numberLiteral += 5;
             pcountLiteral++;
             pcount.innerText = pcountLiteral;
@@ -78,7 +78,7 @@ window.addEventListener('load', function () {
     let mcost = document.getElementById('UpgradeMeatPrice');
     mupgrade.onclick = () => {
         let mcostLiteral = parseInt(mcost.innerHTML);
-        if ((literalLira - mcostLiteral) > 0) {
+        if ((literalLira - mcostLiteral) >= 0) {
             numberLiteral += 10;
             mcountLiteral++;
             mcount.innerHTML = mcountLiteral;
