@@ -66,7 +66,7 @@ window.addEventListener('load', function () {
         mcountLiteral++;
         mcount.innerText = mcountLiteral;
         number.innerText = numberLiteral;
-        mcost.innerText = PurchaseUpgrade(0.3, mcostLiteral);
+        mcost.innerText = PurchaseUpgrade(1.3, mcostLiteral);
     }
 });
 
@@ -79,7 +79,6 @@ window.addEventListener('load', function () {
 //    let numLiteral = parseInt(upgradeCount);
 //    let rateLiteral = parseFloat(rate);
 //    let baseCostBoi = parseInt(baseCost);
-//    rate += 1;
 //    for (let i = 0; i < num; i++) {
 //        baseCost *= rate;
 //    }
@@ -93,7 +92,7 @@ function PurchaseUpgrade(rate, currentCost) {
     if (literalLiraNumber - costLiteral >= 0) {
         literalLiraNumber -= costLiteral;
         costLiteral *= rateLiteral;
-        literalLira = literalLiraNumber.toString();
+        literalLira = literalLiraNumber;
     }
     return costLiteral;
 }
