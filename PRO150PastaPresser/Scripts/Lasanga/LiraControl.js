@@ -1,12 +1,13 @@
 ﻿let currentLira = document.getElementById('number');
 let literalLira = currentLira.innerHTML;
+let clickAmount = 1;
 
 
 //lasagna click
 window.addEventListener('load', function () {
     let trash = document.getElementById('trash');
     trash.onclick = () => {
-        literalLira++;
+        literalLira += clickAmount;
         currentLira.innerHTML = literalLira;
     }
 });
@@ -85,6 +86,24 @@ window.addEventListener('load', function () {
             number.innerHTML = numberLiteral;
             currentLira.innerHTML = parseInt(literalLira - mcostLiteral);
             incrementCost(mcost);
+        }
+    }
+
+    //click
+    let clupgrade = document.getElementById('upgradeClick');
+    let clcount = document.getElementById('clickCount');
+    let clcountLiteral = parseInt(clcount.innerHTML);
+    let clcost = document.getElementById('UpgradeClickPrice');
+    clupgrade.onclick = () => {
+        let mcostLiteral = parseInt(mcost.innerHTML);
+        if ((literalLira - mcostLiteral) >= 0) {
+            //numberLiteral += 10;
+            clcountLiteral++;
+            clcount.innerHTML = clcountLiteral;
+            clickAmount++;
+            //number.innerHTML = numberLiteral;
+            currentLira.innerHTML = parseInt(literalLira - mcostLiteral);
+            incrementCost(clcost);
         }
     }
 });
