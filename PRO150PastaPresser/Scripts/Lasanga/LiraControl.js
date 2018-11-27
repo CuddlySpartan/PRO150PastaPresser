@@ -1,12 +1,13 @@
 ﻿let currentLira = document.getElementById('number');
 let literalLira = currentLira.innerHTML;
+let clickAmount = 1;
 
 
 //lasagna click
 window.addEventListener('load', function () {
     let trash = document.getElementById('trash');
     trash.onclick = () => {
-        literalLira++;
+        literalLira += clickAmount;
         currentLira.innerHTML = literalLira;
     }
 });
@@ -33,7 +34,7 @@ window.addEventListener('load', function () {
     let ccountLiteral = parseInt(ccount.innerHTML);
     cupgrade.onclick = () => {
         let ccostLiteral = parseInt(ccost.innerHTML);
-        if ((literalLira - ccostLiteral) > 0) {
+        if ((literalLira - ccostLiteral) >= 0) {
             numberLiteral += 2;
             ccountLiteral++;
             ccount.innerText = ccountLiteral;
@@ -48,7 +49,7 @@ window.addEventListener('load', function () {
     let scountLiteral = parseInt(scount.innerHTML);
     supgrade.onclick = () => {
         let scostLiteral = parseInt(scost.innerHTML);
-        if ((literalLira - scostLiteral) > 0) {
+        if ((literalLira - scostLiteral) >= 0) {
             numberLiteral += 3;
             scountLiteral++;
             scount.innerText = scountLiteral;
@@ -63,7 +64,7 @@ window.addEventListener('load', function () {
     let pcountLiteral = parseInt(pcount.innerHTML);
     pupgrade.onclick = () => {
         let pcostLiteral = parseInt(pcost.innerHTML);
-        if ((literalLira - pcostLiteral) > 0) {
+        if ((literalLira - pcostLiteral) >= 0) {
             numberLiteral += 5;
             pcountLiteral++;
             pcount.innerText = pcountLiteral;
@@ -78,13 +79,31 @@ window.addEventListener('load', function () {
     let mcost = document.getElementById('UpgradeMeatPrice');
     mupgrade.onclick = () => {
         let mcostLiteral = parseInt(mcost.innerHTML);
-        if ((literalLira - mcostLiteral) > 0) {
+        if ((literalLira - mcostLiteral) >= 0) {
             numberLiteral += 10;
             mcountLiteral++;
             mcount.innerHTML = mcountLiteral;
             number.innerHTML = numberLiteral;
             currentLira.innerHTML = parseInt(literalLira - mcostLiteral);
             incrementCost(mcost);
+        }
+    }
+
+    //click
+    let clupgrade = document.getElementById('upgradeClick');
+    let clcount = document.getElementById('clickCount');
+    let clcountLiteral = parseInt(clcount.innerHTML);
+    let clcost = document.getElementById('UpgradeClickPrice');
+    clupgrade.onclick = () => {
+        let mcostLiteral = parseInt(mcost.innerHTML);
+        if ((literalLira - mcostLiteral) >= 0) {
+            //numberLiteral += 10;
+            clcountLiteral++;
+            clcount.innerHTML = clcountLiteral;
+            clickAmount++;
+            //number.innerHTML = numberLiteral;
+            currentLira.innerHTML = parseInt(literalLira - mcostLiteral);
+            incrementCost(clcost);
         }
     }
 });
