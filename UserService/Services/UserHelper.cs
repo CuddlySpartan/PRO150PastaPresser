@@ -65,6 +65,33 @@ namespace UserService.Services
             return model;
         }
 
+
+        public static UserModel GetUserByUserName(string UserName)
+        {
+            UserModel model = null;
+            using (var context = new PastaPresserEntities())
+            {
+                var UserEntity = context.UserDatas.Single(b => b.UserName == UserName);
+
+                // We again have to map from our entity to our View Model
+                model = new UserModel()
+                {
+                    ID = UserEntity.PlayerId,
+                    Password = UserEntity.Password,
+                    Lira = UserEntity.Lira,
+                    CheeseCount = UserEntity.CheeseCount,
+                    SauceCount = UserEntity.SauceCount,
+                    MeatCount = UserEntity.MeatCount,
+                    PastaCount = UserEntity.PastaCount,
+                    ClickUpgrade = UserEntity.ClickUpgrade,
+                    LastLogin = UserEntity.LastLogin,
+                    LPS = UserEntity.LPS
+
+                };
+            }
+            return model;
+        }
+
         public static void CreateUser(string password, int lira, int cheeseCount, int sauceCount, int meatCount, int pastaCount, int clickUpgrade, Nullable<DateTime> lastLogin, int newLPS)
         {
             using (var context = new PastaPresserEntities())
