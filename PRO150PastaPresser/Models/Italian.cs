@@ -17,6 +17,7 @@ namespace PRO150PastaPresser.Models
         public int PastaCount { get; set; }
         public int ClickUpgrade { get; set; }
         public DateTime LastLogin { get; set; }
+        public int TierLevel { get; set; }
         public int LPS {
             get
             {

@@ -37,9 +37,13 @@
         <div id="LiraCount">
             Lira: <span id="number" class="liraCount">@Model.Lira</span>
         </div>
-        <img  id="trash" src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" class="lasagnaImg" />
+        <img id="trash" src="https://66.media.tumblr.com/c60ebc65486d1c75f1429e10ad10066f/tumblr_mod325UaUQ1rzunsjo1_500.png" class="lasagnaImg" />
         <div id="lpsCount">
             LPS: <span id="lpsNum" class="lpsCount">@Model.LPS</span>
+        </div>
+        <div id="upgradeTier">
+            <input type="button" name="UpgradeButton" value="Upgrade Tier" class="upBtn" />
+            <label class="upLab">Cost: <span id="UpgradeTier">10</span></label>
         </div>
     </div>
     <div class="playerInfo">
@@ -50,7 +54,12 @@
             <li>Pasta Count: <span id="pastaCount">@Model.PastaCount</span></li>
             <li>Meat Count: <span id="meatCount">@Model.MeatCount</span></li>
             <li>Click Upgrade Level: <span id="clickCount">@Model.ClickUpgrade</span></li>
+            <li>Tier Level: <span id="tierLevel">@Model.TierLevel</span></li>
         </ul>
     </div>
+</div>
+
+<div class="SaveArea">
+    <input type="button" name="SaveButton" value="Save" class="saveBtn" />
 </div>
 <script src="~/Scripts/Lasanga/LiraControl.js"></script>
