@@ -54,6 +54,7 @@
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\UserHelper.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="UserData.cs">
       <DependentUpon>UserEntitites.tt</DependentUpon>
     </Compile>

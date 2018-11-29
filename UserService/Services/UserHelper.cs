@@ -13,15 +13,15 @@ namespace UserService.Services
         {
             UserListModel model = new UserListModel();
 
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var UserEntities = context.UserDatas.ToList();
+                var UserEntities = context.Users.ToList();
 
                 UserEntities.ForEach(UserEntity =>
                 {
                     model.Users.Add(new UserModel()
                     {
-                        ID = UserEntity.PlayerId,
+                        ID = UserEntity.ID,
                         Password = UserEntity.Password,
                         Lira = UserEntity.Lira,
                         CheeseCount = UserEntity.CheeseCount,
@@ -42,14 +42,14 @@ namespace UserService.Services
         public static UserModel GetUserById(int id)
         {
             UserModel model = null;
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var UserEntity = context.UserDatas.Single(b => b.PlayerId == id);
+                var UserEntity = context.Users.Single(b => b.ID == id);
 
                 // We again have to map from our entity to our View Model
                 model = new UserModel()
                 {
-                    ID = UserEntity.PlayerId,
+                    ID = UserEntity.ID,
                     Password = UserEntity.Password,
                     Lira = UserEntity.Lira,
                     CheeseCount = UserEntity.CheeseCount,
@@ -69,14 +69,14 @@ namespace UserService.Services
         public static UserModel GetUserByUserName(string UserName)
         {
             UserModel model = null;
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var UserEntity = context.UserDatas.Single(b => b.UserName == UserName);
+                var UserEntity = context.Users.Single(b => b.UserName == UserName);
 
                 // We again have to map from our entity to our View Model
                 model = new UserModel()
                 {
-                    ID = UserEntity.PlayerId,
+                    ID = UserEntity.ID,
                     Password = UserEntity.Password,
                     Lira = UserEntity.Lira,
                     CheeseCount = UserEntity.CheeseCount,
@@ -92,12 +92,13 @@ namespace UserService.Services
             return model;
         }
 
-        public static void CreateUser(string password, DateTime lastLogin, int lira = 0, int cheeseCount = 0, int sauceCount = 0, int meatCount = 0, int pastaCount = 0, int clickUpgrade = 0, int newLPS = 0)
+        public static void CreateUser(string userName, string password, DateTime lastLogin, int lira = 0, int cheeseCount = 0, int sauceCount = 0, int meatCount = 0, int pastaCount = 0, int clickUpgrade = 0, int newLPS = 0)
         {
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var newUser = new UserData()
+                var newUser = new UserModel()
                 {
+                    UserName = userName,
                     Password = password,
                     Lira = lira,
                     CheeseCount = cheeseCount,
@@ -109,15 +110,15 @@ namespace UserService.Services
                     LPS = newLPS
                 };
 
-                context.UserDatas.Add(newUser);
+                context.Users.Add(newUser);
                 context.SaveChanges();
             }
         }
         public static void EditUser(int id, string password, int lira, int cheeseCount, int sauceCount, int meatCount, int pastaCount, int clickUpgrade, DateTime lastLogin, int newLPS)
         {
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var result = context.UserDatas.SingleOrDefault(m => m.PlayerId == id);
+                var result = context.Users.SingleOrDefault(m => m.ID == id);
                 if (result != null)
                 {
                     result.Password = password;
@@ -139,12 +140,12 @@ namespace UserService.Services
 
         public static void DeleteUser(int id)
         {
-            using (var context = new PastaPresserEntities())
+            using (var context = new UserService())
             {
-                var result = context.UserDatas.SingleOrDefault(m => m.PlayerId == id);
+                var result = context.Users.SingleOrDefault(m => m.ID == id);
                 if (result != null)
                 {
-                    context.UserDatas.Remove(result);
+                    context.Users.Remove(result);
                     context.SaveChanges();
                 }
             }
