@@ -96,7 +96,7 @@ window.addEventListener('load', function () {
     let clcost = document.getElementById('UpgradeClickPrice');
     clupgrade.onclick = () => {
         let clcostLiteral = parseInt(clcost.innerHTML);
-        if ((literalLira - mcostLiteral) >= 0) {
+        if ((literalLira - clcostLiteral) >= 0) {
             //numberLiteral += 10;
             clcountLiteral++;
             clcount.innerHTML = clcountLiteral;
