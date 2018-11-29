@@ -95,14 +95,14 @@ window.addEventListener('load', function () {
     let clcountLiteral = parseInt(clcount.innerHTML);
     let clcost = document.getElementById('UpgradeClickPrice');
     clupgrade.onclick = () => {
-        let mcostLiteral = parseInt(mcost.innerHTML);
+        let clcostLiteral = parseInt(clcost.innerHTML);
         if ((literalLira - mcostLiteral) >= 0) {
             //numberLiteral += 10;
             clcountLiteral++;
             clcount.innerHTML = clcountLiteral;
             clickAmount++;
             //number.innerHTML = numberLiteral;
-            currentLira.innerHTML = parseInt(literalLira - mcostLiteral);
+            currentLira.innerHTML = parseInt(literalLira - clcostLiteral);
             incrementCost(clcost);
         }
     }
