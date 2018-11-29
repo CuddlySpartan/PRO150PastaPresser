@@ -94,7 +94,6 @@ hr
     max-height: 50px;
     line-height: 50px;
     padding: 5px;
-
     display: inline-block;
     color: #444;
     border: 1px solid #CCC;
@@ -106,6 +105,7 @@ hr
     max-width: 125px;
     padding: 5px;
     text-align: center;
+    vertical-align: central;
 }
 
 .upBtn:active {
@@ -130,8 +130,8 @@ hr
     max-width: 100px;
     /*margin: 10px;*/
     text-align: center;
-
     display: block;
+    margin: auto;
     margin-left: auto;
     margin-right: auto;
 }
