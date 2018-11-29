@@ -17,8 +17,9 @@ namespace UserService.Models
         public int MeatCount { get; set; }
         public int PastaCount { get; set; }
         public int ClickUpgrade { get; set; }
-        public Nullable<DateTime> LastLogin { get; set; }
+        public DateTime LastLogin { get; set; }
         public int LPS { get; set; }
+        public int Tier { get; set; }
 
     }
 }

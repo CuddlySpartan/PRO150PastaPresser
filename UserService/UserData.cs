@@ -11,19 +11,22 @@ namespace UserService
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class UserData
     {
+        [Key]
         public int PlayerId { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
         public int Lira { get; set; }
+        public int Tier { get; set; }
         public int CheeseCount { get; set; }
         public int SauceCount { get; set; }
         public int MeatCount { get; set; }
         public int PastaCount { get; set; }
         public int ClickUpgrade { get; set; }
-        public Nullable<System.DateTime> LastLogin { get; set; }
+        public System.DateTime LastLogin { get; set; }
         public int LPS { get; set; }
     }
 }

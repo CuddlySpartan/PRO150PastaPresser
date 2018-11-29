@@ -58,8 +58,8 @@ namespace UserService.Services
                     PastaCount = UserEntity.PastaCount,
                     ClickUpgrade = UserEntity.ClickUpgrade,
                     LastLogin = UserEntity.LastLogin,
-                    LPS = UserEntity.LPS
-
+                    LPS = UserEntity.LPS,
+                    Tier = UserEntity.Tier
                 };
             }
             return model;
@@ -92,7 +92,7 @@ namespace UserService.Services
             return model;
         }
 
-        public static void CreateUser(string password, int lira, int cheeseCount, int sauceCount, int meatCount, int pastaCount, int clickUpgrade, Nullable<DateTime> lastLogin, int newLPS)
+        public static void CreateUser(string password, DateTime lastLogin, int lira = 0, int cheeseCount = 0, int sauceCount = 0, int meatCount = 0, int pastaCount = 0, int clickUpgrade = 0, int newLPS = 0)
         {
             using (var context = new PastaPresserEntities())
             {
@@ -113,7 +113,7 @@ namespace UserService.Services
                 context.SaveChanges();
             }
         }
-        public static void EditUser(int id, string password, int lira, int cheeseCount, int sauceCount, int meatCount, int pastaCount, int clickUpgrade, Nullable<DateTime> lastLogin, int newLPS)
+        public static void EditUser(int id, string password, int lira, int cheeseCount, int sauceCount, int meatCount, int pastaCount, int clickUpgrade, DateTime lastLogin, int newLPS)
         {
             using (var context = new PastaPresserEntities())
             {

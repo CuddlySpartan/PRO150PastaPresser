@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PastaPresserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="PastaPresserModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="UserData">
           <Key>
             <PropertyRef Name="PlayerId" />
@@ -13,41 +13,42 @@
           <Property Name="UserName" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="Lira" Type="int" Nullable="false" />
+          <Property Name="Tier" Type="int" Nullable="false" />
           <Property Name="CheeseCount" Type="int" Nullable="false" />
           <Property Name="SauceCount" Type="int" Nullable="false" />
           <Property Name="MeatCount" Type="int" Nullable="false" />
           <Property Name="PastaCount" Type="int" Nullable="false" />
           <Property Name="ClickUpgrade" Type="int" Nullable="false" />
-          <Property Name="LastLogin" Type="datetime" />
+          <Property Name="LastLogin" Type="datetime" Nullable="false" />
           <Property Name="LPS" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PastaPresserModelStoreContainer">
           <EntitySet Name="UserData" EntityType="Self.UserData" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PastaPresserModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="PastaPresserEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UserDatas" EntityType="PastaPresserModel.UserData" />
+        </EntityContainer>
         <EntityType Name="UserData">
           <Key>
             <PropertyRef Name="PlayerId" />
           </Key>
           <Property Name="PlayerId" Type="Int32" Nullable="false" />
-          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Lira" Type="Int32" Nullable="false" />
+          <Property Name="Tier" Type="Int32" Nullable="false" />
           <Property Name="CheeseCount" Type="Int32" Nullable="false" />
           <Property Name="SauceCount" Type="Int32" Nullable="false" />
           <Property Name="MeatCount" Type="Int32" Nullable="false" />
           <Property Name="PastaCount" Type="Int32" Nullable="false" />
           <Property Name="ClickUpgrade" Type="Int32" Nullable="false" />
-          <Property Name="LastLogin" Type="DateTime" Precision="3" />
+          <Property Name="LastLogin" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="LPS" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="PastaPresserEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="UserDatas" EntityType="Self.UserData" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -57,17 +58,18 @@
           <EntitySetMapping Name="UserDatas">
             <EntityTypeMapping TypeName="PastaPresserModel.UserData">
               <MappingFragment StoreEntitySet="UserData">
-                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
-                <ScalarProperty Name="Password" ColumnName="Password" />
-                <ScalarProperty Name="Lira" ColumnName="Lira" />
-                <ScalarProperty Name="CheeseCount" ColumnName="CheeseCount" />
-                <ScalarProperty Name="SauceCount" ColumnName="SauceCount" />
-                <ScalarProperty Name="MeatCount" ColumnName="MeatCount" />
-                <ScalarProperty Name="PastaCount" ColumnName="PastaCount" />
-                <ScalarProperty Name="ClickUpgrade" ColumnName="ClickUpgrade" />
-                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
                 <ScalarProperty Name="LPS" ColumnName="LPS" />
+                <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+                <ScalarProperty Name="ClickUpgrade" ColumnName="ClickUpgrade" />
+                <ScalarProperty Name="PastaCount" ColumnName="PastaCount" />
+                <ScalarProperty Name="MeatCount" ColumnName="MeatCount" />
+                <ScalarProperty Name="SauceCount" ColumnName="SauceCount" />
+                <ScalarProperty Name="CheeseCount" ColumnName="CheeseCount" />
+                <ScalarProperty Name="Tier" ColumnName="Tier" />
+                <ScalarProperty Name="Lira" ColumnName="Lira" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PlayerId" ColumnName="PlayerId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
