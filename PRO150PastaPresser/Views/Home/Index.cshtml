@@ -1,4 +1,4 @@
-﻿@model PRO150PastaPresser.Models.Italian
+﻿@model UserService.Models.UserModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -34,7 +34,7 @@
     </div>
     <div>
         @*<input type="hidden" name="p" value="@Model.Password" />
-        <input type="hidden" name="u" value="@Model.Username" />*@
+            <input type="hidden" name="u" value="@Model.Username" />*@
         <div id="LiraCount">
             Lira: <span id="number" class="liraCount">@Model.Lira</span>
         </div>
@@ -55,12 +55,14 @@
             <li>Pasta Count: <span id="pastaCount">@Model.PastaCount</span></li>
             <li>Meat Count: <span id="meatCount">@Model.MeatCount</span></li>
             <li>Click Upgrade Level: <span id="clickCount">@Model.ClickUpgrade</span></li>
-            <li>Tier Level: <span id="tierLevel">@Model.TierLevel</span></li>
+            <li>Tier Level: <span id="tierLevel">@Model.Tier</span></li>
         </ul>
     </div>
 </div>
 
 <div class="SaveArea">
-    <input type="button" name="SaveButton" value="Save" class="btn btn-default" />
+    <form method="post" action="/Home/Save/@Model.ID">
+        <input type="submit" name="SaveButton" value="Save" class="btn btn-default" />
+    </form>
 </div>
 <script src="~/Scripts/Lasanga/LiraControl.js"></script>

@@ -3,6 +3,12 @@ let literalLira = currentLira.innerHTML;
 let clickAmount = 1;
 
 
+//Load User Information
+window.addEventListener('load', function () {
+
+});
+
+
 //lasagna click
 window.addEventListener('load', function () {
     let trash = document.getElementById('trash');
@@ -121,15 +127,3 @@ function incrementCost(currentCost) {
     let rate = 1.2;
     currentCost.innerHTML = parseInt(currentCostLiteral *= rate);
 }
-
-//This is for rendering everything on startup
-//function CalculateCost(upgradeCount, rate, baseCost) {
-//    let numLiteral = parseInt(upgradeCount);
-//    let rateLiteral = parseFloat(rate);
-//    let baseCostBoi = parseInt(baseCost);
-//    rate += 1;
-//    for (let i = 0; i < num; i++) {
-//        baseCost *= rate;
-//    }
-//    return baseCost;
-//}
