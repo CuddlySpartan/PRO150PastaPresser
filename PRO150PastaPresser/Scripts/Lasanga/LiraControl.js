@@ -2,12 +2,28 @@
 let literalLira = currentLira.innerHTML;
 let clickAmount = 1;
 
+const modelGuy = new Object();
+modelGuy.CheeseCount = document.getElementById('cheeseCount').innerHTML;
+modelGuy.MeatCount = document.getElementById('cheeseCount').innerHTML;
+modelGuy.SauceCount = document.getElementById('cheeseCount').innerHTML;
+modelGuy.PastaCount = document.getElementById('cheeseCount').innerHTML;
 
 //Load User Information
 window.addEventListener('load', function () {
 
 });
 
+//Save User Information
+window.addEventListener('load', function () {
+    let save = document.getElementById('saveBtn');
+    save.onclick = () => {
+        let form = document.getElementById('saveForm');
+        
+
+
+        document.appendChild(form);
+    }
+});
 
 //lasagna click
 window.addEventListener('load', function () {
