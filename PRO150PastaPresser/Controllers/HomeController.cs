@@ -14,13 +14,16 @@ namespace PRO150PastaPresser.Controllers
         Italian BigItalian = new Italian();
         public ActionResult Index()
         {
+            UserModel italian = new UserModel(); ;
             if(User.Identity.IsAuthenticated)
             {
-                var goodBoi = UserHelper.GetUserByUserName(User.Identity.Name);
-                return View(goodBoi);
+                italian = UserHelper.GetUserByUserName(User.Identity.Name);
+            }
+            else
+            {
+                italian = new UserModel();
             }
 
-            var italian = new UserModel();
             return View(italian);
         }
 
