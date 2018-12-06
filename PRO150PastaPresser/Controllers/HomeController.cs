@@ -18,6 +18,7 @@ namespace PRO150PastaPresser.Controllers
             if(User.Identity.IsAuthenticated)
             {
                 italian = UserHelper.GetUserByUserName(User.Identity.Name);
+                italian.LPS = (italian.CheeseCount * 2)+(italian.SauceCount * 3) +(italian.PastaCount * 5) +(italian.MeatCount * 10);
             }
             else
             {
