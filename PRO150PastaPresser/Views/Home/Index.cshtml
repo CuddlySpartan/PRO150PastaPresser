@@ -61,22 +61,8 @@
 </div>
 
 <div class="SaveArea">
-    @*<form method="post" action="/Home/Save/@Model.ID">*@
-    <input type="submit" id="saveBtn" name="SaveButton" value="Save" class="btn btn-default" />
-    @*</form>*@
+    <form method="post" action="/Home/Save/@Model.ID" id="saveForm">
+        <input type="button" name="SaveButton" value="Save" class="btn btn-default" id="saveBtn"/>
+    </form>
 </div>
 <script src="~/Scripts/Lasanga/LiraControl.js"></script>
-
-
-@*<script>
-    window.addEventListener('load', function () {
-        let save = document.getElementById('saveBtn');
-        save.onclick = () => {
-            alert('REEE');
-            @*var italianMan = '@Html.Raw(Json.Encode(Model))';*@@*
-            var lira = document.getElementById('number');
-            var liraLiteral = lira.innerHTML;
-            @Model.Lira = liraLiteral;
-            }
-        });
-</script>*@
