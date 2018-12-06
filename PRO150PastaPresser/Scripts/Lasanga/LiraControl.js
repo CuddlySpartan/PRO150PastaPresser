@@ -1,7 +1,7 @@
 ﻿let currentLira = document.getElementById('number');
 let literalLira = currentLira.innerHTML;
 let clickHtml = document.getElementById('clickCount');
-var clickAmount = clickHtml.innerHTML;
+var clickAmount = parseInt(clickHtml.innerHTML);
 
 const modelGuy = new Object();
 modelGuy.lira = literalLira;
