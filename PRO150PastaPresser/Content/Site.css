@@ -84,7 +84,7 @@ hr
 }
 
 .liraCount, .lpsCount{
-    background: yellow;
+    /*background: yellow;*/
     color: dodgerblue;
     width: auto;
 }
