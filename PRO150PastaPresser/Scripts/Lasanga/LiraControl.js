@@ -4,10 +4,8 @@ let clickHtml = document.getElementById('clickCount');
 var clickAmount = clickHtml.innerHTML;
 
 const modelGuy = new Object();
-modelGuy.CheeseCount = document.getElementById('cheeseCount').innerHTML;
-modelGuy.MeatCount = document.getElementById('cheeseCount').innerHTML;
-modelGuy.SauceCount = document.getElementById('cheeseCount').innerHTML;
-modelGuy.PastaCount = document.getElementById('cheeseCount').innerHTML;
+modelGuy.lira = literalLira;
+modelGuy.LPS = document.getElementById('lpsNum').innerHTML;
 
 //Load User Information
 window.addEventListener('load', function () {
@@ -20,6 +18,12 @@ window.addEventListener('load', function () {
     save.onclick = () => {
         let form = document.getElementById('saveForm');
         
+        let cheeseCount = document.getElementById('cheeseCount').innerHTML;
+        let meatCount = document.getElementById('meatCount').innerHTML;
+        let sauceCount = document.getElementById('sauceCount').innerHTML;
+        let pastaCount = document.getElementById('pastaCount').innerHTML;
+        let lira = literalLira;
+        let LPS = document.getElementById('lpsNum').innerHTML;
 
 
         document.appendChild(form);
