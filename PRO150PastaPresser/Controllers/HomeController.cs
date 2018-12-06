@@ -48,15 +48,11 @@ namespace PRO150PastaPresser.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Save(int id)
+        public ActionResult Save(UserModel model)
         {
-            var model = UserHelper.GetUserById(id);
-
             UserHelper.EditUser(model.ID, model.Password, model.Lira, model.CheeseCount, model.SauceCount, model.MeatCount, model.PastaCount, model.ClickUpgrade, DateTime.Now, model.LPS);
-
-            var newBoi = UserHelper.GetUserById(model.ID);
-
-            return View("Index", newBoi);
+            
+            return View("Index", model);
         }
     }
 }

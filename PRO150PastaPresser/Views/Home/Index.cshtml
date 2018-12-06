@@ -33,8 +33,8 @@
         </div>
     </div>
     <div>
-        @*<input type="hidden" name="p" value="@Model.Password" />
-            <input type="hidden" name="u" value="@Model.Username" />*@
+        <input type="hidden" name="p" value="@Model.Password" id="modelPass" />
+            <input type="hidden" name="u" value="@Model.UserName" id="modelUsername"/>
         <div id="LiraCount">
             Lira: <span id="number" class="liraCount">@Model.Lira</span>
         </div>
@@ -61,8 +61,18 @@
 </div>
 
 <div class="SaveArea">
-    <form method="post" action="/Home/Save/@Model.ID" id="saveForm">
-        <input type="button" name="SaveButton" value="Save" class="btn btn-default" id="saveBtn"/>
+    <form method="post" action="/Home/Save/" id="saveForm">
+        <input type="hidden" name="id" value="@Model.ID" />
+        <input type="hidden" name="userName" value="@Model.UserName" />
+        <input type="hidden" name="password" value="@Model.Password" />
+        <input type="hidden" name="cheeseCount" value="@Model.CheeseCount" id="formCheese" />
+        <input type="hidden" name="sauceCount" value="@Model.SauceCount" id="formSauce" />
+        <input type="hidden" name="pastaCount" value="@Model.PastaCount" id="formPasta" />
+        <input type="hidden" name="meatCount" value="@Model.MeatCount" id="formMeat" />
+        <input type="hidden" name="clickUpgradeLevel" value="@Model.ClickUpgrade" id="formClickUpgrade" />
+        <input type="hidden" name="lira" value="@Model.Lira" id="formLira" />
+        <input type="hidden" name="lps" value="@Model.LPS" id="formLPS" />
+        <input type="submit" name="SaveButton" value="Save" class="btn btn-default" id="saveBtn" />
     </form>
 </div>
 <script src="~/Scripts/Lasanga/LiraControl.js"></script>

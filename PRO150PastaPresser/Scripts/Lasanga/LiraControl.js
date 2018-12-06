@@ -1,11 +1,7 @@
 ﻿let currentLira = document.getElementById('number');
 let literalLira = currentLira.innerHTML;
 let clickHtml = document.getElementById('clickCount');
-var clickAmount = parseInt(clickHtml.innerHTML);
-
-const modelGuy = new Object();
-modelGuy.lira = literalLira;
-modelGuy.LPS = document.getElementById('lpsNum').innerHTML;
+var clickAmount = parseInt(clickHtml.innerHTML) + 1;
 
 //Load User Information
 window.addEventListener('load', function () {
@@ -16,30 +12,18 @@ window.addEventListener('load', function () {
 window.addEventListener('load', function () {
     let save = document.getElementById('saveBtn');
     save.onclick = () => {
-        const modelGuy = new Object();
 
-        modelGuy.lira = literalLira;
-        modelGuy.LPS = document.getElementById('lpsNum').innerHTML;
-        modelGuy.CheeseCount = document.getElementById('cheeseCount').innerHTML;
-        modelGuy.MeatCount = document.getElementById('meatCount').innerHTML;
-        modelGuy.SauceCount = document.getElementById('sauceCount').innerHTML;
-        modelGuy.PastaCount = document.getElementById('pastaCount').innerHTML;
-        modelGuy.Lira = literalLira;
-        modelGuy.LPS = document.getElementById('lpsNum').innerHTML;
+        document.getElementById('formLira').setAttribute('value', literalLira);
+        document.getElementById('formLPS').setAttribute('value', document.getElementById('lpsNum').innerHTML);
+        document.getElementById('formCheese').setAttribute('value', document.getElementById('cheeseCount').innerHTML);
+        document.getElementById('formSauce').setAttribute('value', document.getElementById('sauceCount').innerHTML);
+        document.getElementById('formPasta').setAttribute('value', document.getElementById('pastaCount').innerHTML);
+        document.getElementById('formMeat').setAttribute('value', document.getElementById('meatCount').innerHTML);
 
-        let modelGuyJSONString = JSON.stringify(modelGuy);
-        $.ajax({
-            type: "POST",
-            url: document.getElementById('saveForm').action,
-            data: modelGuyJSONString,
-            contentType: 'application/json; charshet =utf-8',
-            success: function (data) {
-                Console.Log("Save Success!");
-            },
-            error: function (data) {
-                Console.Log("Save Failed!")
-            }
-        })
+        testGuy = new Object();
+        testGuy.cheese = document.getElementById('formCheese').value;
+        let newTestGuy = JSON.stringify(testGuy);
+
     }
 });
 

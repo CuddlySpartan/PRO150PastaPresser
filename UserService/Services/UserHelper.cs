@@ -44,7 +44,7 @@ namespace UserService.Services
             UserModel model = null;
             using (var context = new UserService())
             {
-                var UserEntity = context.Users.Single(b => b.ID == id);
+                var UserEntity = context.Users.FirstOrDefault(u => u.ID == id);
 
                 // We again have to map from our entity to our View Model
                 model = new UserModel()
